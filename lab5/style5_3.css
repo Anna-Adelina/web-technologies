@@ -1,0 +1,107 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    margin: 15px;
+}
+
+form {
+    background-color: #ffffff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    margin: 20px ;
+}
+
+fieldset {
+    border: 2px solid #000000;
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+}
+
+legend {
+    font-weight: bold;
+    font-size: 20px;
+    color: #ac6ff1;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+input[type="date"],
+select,
+textarea,
+input[list] {
+    width: 90%;
+    padding: 8px 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 20;
+    box-sizing: border-box;
+}
+
+fieldset .radio-group,
+fieldset .checkbox-group,
+fieldset .skills-group {
+    margin-top: 5px;
+    display: flex;
+    gap: 15px;
+}
+
+button {
+    background-color: #ac6ff1;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 15px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+button:hover {
+    background-color: #7000f1;
+}
+
+a {
+    color: #7000f1;
+    text-decoration: none;
+    font-weight: 600;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+input[type="file"] {
+    display: none;
+}
+label[for="audiofiles"] {
+    display: inline-block;
+    background-color: #ac6ff1;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 5px;
+    text-align: center;
+}
+label[for="audiofiles"]:hover {
+    background-color: #7000f1;
+}
+
+.hint {
+    font-size: small;
+    font-style: italic;
+    color: #ac6ff1;
+    padding-left: 5px;
+}

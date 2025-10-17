@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+}
+div {
+    background-color: rgb(255, 165, 0);
+    width: 500px;
+    padding: 20px;
+    color: rgb(255, 255, 255);
+}
+h1 {
+    font-size: 25px;
+    font-weight: 900;
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+ul {
+    list-style-position: inside; 
+    list-style: none;
+    padding: 0;
+}
+.level1 li { 
+    background-color: rgb(103, 158, 128);
+    padding-right: 20px;
+    padding-left: 50px; 
+    margin-bottom: 10px;
+}
+.level2 li {
+    font-size: 18px;
+    font-style: italic;
+    background-color: rgb(153, 180, 102);
+    margin-bottom: 10px;
+    padding-left: 40px; 
+}
+span {
+    display: inline-block;
+    padding: 10px 20px;
+}
+.level1 > li > span {
+    font-size: 20px;
+    font-weight: 700;
+    background-color: rgb(199, 124, 106);
+    margin-bottom: 10px;
+}
+.level2 > li > span{ 
+    background-color: rgb(218, 106, 32); 
+}
+.rule {
+    background-image: url("rule.png");
+    background-repeat: no-repeat;
+    background-size: 40px 40px; 
+}
+.ad_units {
+    background-image: url('ad_units.png');
+    background-position: 5px center;
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+}
+.airplane_ticket {
+    background-image: url('airplane_ticket.png');
+    background-position: 5px center;
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+}
+.hotel {
+    background-image: url('hotel.png');
+    background-position: 5px center;
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+}
+.car_rental {
+    background-image: url('car_rental.png');
+    background-position: 5px center;
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+    
+}
+.local_bar {
+    background-image: url('local_bar.png');
+    background-position: 5px center;
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+}
+.casino {
+    background-image: url('casino.png');
+    background-position: 5px center;
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+}
+.museum {
+    background-image: url('museum.png');
+    background-position: 5px center;
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+}
+.festival {
+    background-image: url('festival.png');
+    background-position: 5px center;
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+}

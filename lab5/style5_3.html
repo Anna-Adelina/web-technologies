@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" href="style5_3.css">
+</head>
+<body>
+    <form action="" method="get">
+      <fieldset>
+        <legend>Особисті дані</legend>
+        <div>
+          <label for="fullname">ПІБ:</label>
+          <input type="text" id="fullname" name="fullname" placeholder="Ваше повне ПІБ" tabindex="1" value="" required>
+
+          <p><label for="bio">Коротка біографія</label>
+          <textarea id="bio" name="bio" placeholder="Розкажіть про себе" rows="2" tabindex="2"></textarea></p>
+
+          <p><label for="email_name">Email</label>
+          <input type="email" id="email_name" name="email" placeholder="name@example.com" autocomplete="off" pattern="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$" tabindex="3" required></p>
+
+          <p><label for="phone">Мобільний телефон</label>
+          <input type="tel" id="phone" name="phone" placeholder="+380" pattern="^\+?\d{9,15}$" tabindex="4" required></p>
+
+          <p><label for="birth">Дата народження</label>
+          <input type="date" id="birth" name="birth" tabindex="5" required>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Параметри доступу</legend>
+        
+        <label for="password">Пароль</label>
+        <input type="password" id="password" name="password" placeholder="Aa1bbb" pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[A-Za-z\d]{6}" tabindex="6" required>
+        <p class="hint">Пароль має складатись із 6 символів, містити велику та малу літери й цифру.</p>
+
+        <label>Стать</label>
+        <div class="radio-group">
+          <input type="radio" id="male" name="gender" value="male" tabindex="7">
+          <label for="male">Чоловік</label>
+
+          <input type="radio" id="female" name="gender" value="female" tabindex="8">
+          <label for="female">Жінка</label>
+
+          <input type="radio" id="other" name="gender" value="other" tabindex="9" checked>
+          <label for="other">Інше</label>
+        </div>
+
+        <label>Рівень досвіду</label>
+        <div class="skills-group">
+          <input type="radio" id="beginner" name="knowledge" value="beginner" tabindex="10" checked>
+          <label for="beginner">Junior</label>
+
+          <input type="radio" id="intermediate" name="knowledge" value="intermediate" tabindex="11">
+          <label for="intermediate">Middle</label>
+
+          <input type="radio" id="advanced" name="knowledge" value="advanced" tabindex="12">
+          <label for="advanced">Senior</label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+      <legend>Додаткова інформація</legend>
+      <div>
+        <label>Хобі</label>
+        <div class="checkbox-group">
+        <input type="checkbox" id="reading" name="hobby" value="reading" tabindex="13">
+          <label for="reading">Читання</label>
+
+          <input type="checkbox" id="sports" name="hobby" value="sports" tabindex="14">
+          <label for="sports">Спорт</label>
+
+          <input type="checkbox" id="travel" name="hobby" value="travel" tabindex="15">
+          <label for="travel">Подорожі</label>
+
+          <input type="checkbox" id="music" name="hobby" value="music" tabindex="16">
+          <label for="music">Музика</label>
+        </div>
+        
+        <label for="country">Країна проживання</label> 
+        <div>
+          <select id="country" name="country" tabindex="17"> 
+            <option value="pl">Польща</option>
+            <option value="de">Німеччина</option>
+            <option value="ua" selected>Україна</option>
+            <option value="uk">Велика Британія</option>
+            <option value="other">Інше</option>
+          </select>
+        </div>
+
+        <label for="skills">Навички</label> 
+        <div>
+          <select id="skills" name="skills" multiple size="4" tabindex="18"> 
+            <option value="html">HTML</option>
+            <option value="css">CSS</option>
+            <option value="js" selected>JavaScript</option>
+            <option value="cpp">C++</option>
+            <option value="python">Python</option>
+            <option value="sql">SQL</option>
+          </select>
+        </div>
+
+        <label for="genre">Улюблений жанр музики</label>
+        <div>
+          <select id="genre" name="genre" tabindex="19">
+            <optgroup label="Поп">
+              <option value="pop1">Поп-рок</option>
+              <option value="pop2">K-поп</option>
+              <option value="pop3">Данс-поп</option>
+            </optgroup>
+
+            <optgroup label="Рок">
+              <option value="rock1">Інді-рок</option>
+              <option value="rock2">Панк-рок</option>
+              <option value="rock3">Хард-рок</option>
+            </optgroup>
+
+            <optgroup label="Класика">
+              <option value="class1">Симфонія</option>
+              <option value="class2">Опера</option>
+              <option value="class3">Трагедія</option>
+            </optgroup>
+
+            <optgroup label="Інструментальна">
+              <option value="exp1">Сольна</option>
+              <option value="exp2">Народна</option>
+              <option value="exp3">Оркестр</option>
+            </optgroup>
+          </select>
+        </div>
+
+        <label for="search">Улюблені страви</label>
+        <div>
+          <input list="suggestions" id="search" name="search" placeholder="Введіть текст..." tabindex="20">
+          <datalist id="suggestions">
+            <option value="Піца"></option>
+            <option value="Суші"></option>
+            <option value="Борщ"></option>
+            <option value="Паста"></option>
+            <option value="Салат"></option>
+          </datalist>
+        </div>
+      </div>
+    </fieldset>
+
+    <div><p>
+      <button type="submit" tabindex="21">Надіслати</button>
+      <button type="reset" tabindex="22">Очистити</button>
+    </div></p>
+  </form>
+
+  <form action="" method="post" enctype="multipart/form-data">
+    <fieldset>
+      <legend>Форма для завантаження</legend>
+
+      <label for="username">Логін</label>
+      <input type="text" id="username" name="username" placeholder="login123" tabindex="23" required>
+
+      <label for="audiofiles">Завантажити аудіофайли</label>
+      <input type="file" id="audiofiles" name="audiofiles" placeholder="login123" accept="audio/*" multiple tabindex="24" required>
+      <p class="hint">Дозволено тільки аудіофайли</p>
+    </fieldset>
+  </form>
+  <p>
+    <a href="../index.html">Повернутись назад</a>
+  </p>
+</body>
+</html>
