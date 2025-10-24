@@ -1,0 +1,22 @@
+a {
+    color: rgb(128, 0, 128);
+}
+.menu-item > li > a {
+    color: rgb(0, 208, 35);
+}
+.square-list {
+    list-style-type: square;
+}
+.icon-list {
+    list-style-image: url("checkmark-16px.png");
+}
+ul li ul {
+    list-style: none; 
+}
+.square-list a {
+    text-decoration: none;
+}
+ol {
+    list-style-position: inside;
+    padding: 0;
+}

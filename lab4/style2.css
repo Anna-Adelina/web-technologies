@@ -1,0 +1,39 @@
+* {
+  text-align: center;
+}
+#title {
+  color: #ff0000;
+  font-weight: bold;
+}
+#subtitle {
+  font-size: larger; 
+  font-style: italic;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+.body-text {
+    font-weight: bold;
+}
+.small-text {
+  font-size: small; 
+}
+.crossed {
+  text-decoration: line-through;  
+}
+.underline {
+  text-decoration: underline;
+}
+.highlight {
+  background-color: #ffff00;
+}
+.footer {
+  font-family: Corbel;
+  font-style: italic;
+}
+.decor-hr {
+  height: 4px;
+  background-color: green;
+  width: 430px;
+}
