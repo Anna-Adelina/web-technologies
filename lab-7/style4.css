@@ -1,0 +1,150 @@
+body {
+    font-size: 18px;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    position: sticky;
+    background-color: #4a4a4a;
+}
+.navbar ul {
+    cursor: pointer;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+.navbar li {
+    display: inline-block;
+    padding: 15px 25px;
+    position: relative;
+}
+.navbar li.align-right {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.navbar .active {
+    background-color: #5cb85c;
+}
+.navbar li:hover {
+    background-color: #5cb85c;
+}
+.navbar img {
+    height: 30px;
+    vertical-align: middle;
+}
+.navbar .tab {
+    font-size: 18px;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #3a3a3a;
+    width: 150px;
+    padding: 0;
+    margin: 0;
+}
+.tab {
+    position: relative;
+}
+.navbar li:hover .tab {
+    display: block;
+}
+.tab > li:hover {
+    background-color: #5cb85c;
+    display: block;
+}
+.tab a {
+    color: white;
+    text-decoration: none;
+}
+
+
+.sidebar {
+    width: 250px;
+    background-color: #0066cc;
+    min-height: 850px;
+    float: left;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.sidebar a {
+    display: block;
+    color: white;
+    padding: 15px 20px;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: #0052a3;
+    padding-left: 30px;
+}
+
+.sidebar img {
+    height: 25px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.submenu {
+    display: none;
+    background-color: #0052a3;
+}
+
+.sidebar li:hover .submenu {
+    display: block;
+}
+
+.submenu li {
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.submenu a {
+    font-size: 16px;
+}
+
+.submenu a:hover {
+    padding-left: 50px;
+    background-color: #003d7a;
+}
+
+.subsubmenu {
+    display: none;
+    background-color: #003d7a;
+}
+
+.submenu li:hover .subsubmenu {
+    display: block;
+}
+
+.subsubmenu a {
+    padding-left: 20px;
+    font-size: 14px;
+}
+
+.subsubmenu a:hover {
+    padding-left: 50px;
+    background-color: #002952;
+}
+
+.content {
+    margin-left: 205px;
+    padding: 40px 90px;
+    background-color: #cccccc;
+    min-height: 850px;
+}
+
+.content h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
