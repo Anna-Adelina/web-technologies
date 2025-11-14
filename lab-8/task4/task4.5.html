@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Keepsake Agency</title>
+<link rel="stylesheet" href="style4.5.css">
+</head>
+<body>
+  <header class="header header-menu">
+    <div class="logo">Keepsake</div>
+    <nav>
+      <ul class="nav-list">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Our Works</a></li>
+        <li><a href="#">Journal</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <div class="burger">
+        <span></span>
+      </div>
+    </nav>
+  </header>
+
+  <section class="intro">
+    <h1>We're Keepsake, a Digital & Branding Agency</h1>
+    <p>Specializing in web-design, poster, motion video, based in London. We love to turn ideas into beautiful things.</p>
+  </section>
+
+  <section>
+    <header class = "header">
+      <h2>Our Awesome Works</h2>
+      <button class="btn">View More</button></div>
+    </header>
+    <div class="container works-grid">
+      <div class="work-card"><img src="pic1.jpg" alt="Work 1"></div>
+      <div class="work-card"><img src="pic2.jpg" alt="Work 2"></div>
+      <div class="work-card"><img src="pic3.jpg" alt="Work 3"></div>
+      <div class="work-card"><img src="pic5.jpg" alt="Work 4"></div>
+      <div class="work-card"><img src="pic6.jpg" alt="Work 5"></div>
+      <div class="work-card"><img src="pic4.jpg" alt="Work 6"></div>
+      <div class="work-card"><img src="pic7.jpg" alt="Work 7"></div>
+      <div class="work-card"><img src="pic8.jpg" alt="Work 8"></div>
+      <div class="work-card"><img src="pic9.jpg" alt="Work 9"></div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="container">
+      <h2>Would You Love to Work With Us?</h2>
+      <button class="btn">Contact us</button>
+    </div>
+  </section>
+
+  <section class="services">
+    <header class = "header">
+      <h2>What Do We Do</h2>
+    </header>
+    <div class="container services-grid">
+      <div class="service-card"><h3>Web Design</h3><p>Lorem ipsum dolor sit amet. Suspendisse condimentum tempus dignissim. Quisque sed vestibulum urna. Donec vitae nunc felis. </p></div>
+      <div class="service-card"><h3>Motion Video</h3><p>Lorem ipsum dolor sit amet. Suspendisse condimentum tempus dignissim. Quisque sed vestibulum urna. Donec vitae nunc felis. </p></div>
+      <div class="service-card"><h3>Print Design</h3><p>Lorem ipsum dolor sit amet. Suspendisse condimentum tempus dignissim. Quisque sed vestibulum urna. Donec vitae nunc felis. </p></div>
+      <div class="service-card"><h3>Illustration</h3><p>Lorem ipsum dolor sit amet. Suspendisse condimentum tempus dignissim. Quisque sed vestibulum urna. Donec vitae nunc felis. </p></div>
+    </div>
+  </section>
+
+  <section class="journal">
+    <header class = "header">
+        <h2>From the Journal</h2>
+    </header>
+    <div class="container">    
+      <div class="journal-grid">
+        <article class="journal-item">
+          <img src="pic10.jpg">
+            <div>
+              <p class="journal-meta">Nov 14, 2025 / Identity</p> <h3 class="journal-title"> Lorem ipsum dolor sit amet </h3>
+              <p class="journal-text"> Lorem ipsum dolor sit amet. Suspendisse condimentum tempus dignissim. Quisque sed vestibulum urna. Donec vitae nunc felis</p>
+            </div>
+        </article>
+
+        <article class="journal-item">
+          <img src="pic11.jpg">
+            <div>
+              <p class="journal-meta">Nov 14, 2025 / Identity</p> <h3 class="journal-title"> Lorem ipsum dolor sit amet </h3>
+              <p class="journal-text"> Lorem ipsum dolor sit amet. Suspendisse condimentum tempus dignissim. Quisque sed vestibulum urna. Donec vitae nunc felis</p>
+            </div>
+        </article>
+
+        <article class="journal-item">
+          <img src="pic12.jpg">
+            <div>
+              <p class="journal-meta">Nov 14, 2025 / Identity</p> <h3 class="journal-title"> Lorem ipsum dolor sit amet </h3>
+              <p class="journal-text"> Lorem ipsum dolor sit amet. Suspendisse condimentum tempus dignissim. Quisque sed vestibulum urna. Donec vitae nunc felis</p>
+            </div>
+        </article>
+
+        <article class="journal-item">
+          <img src="pic13.jpg">
+            <div>
+              <p class="journal-meta">Nov 14, 2025 / Identity</p> <h3 class="journal-title"> Lorem ipsum dolor sit amet </h3>
+              <p class="journal-text"> Lorem ipsum dolor sit amet. Suspendisse condimentum tempus dignissim. Quisque sed vestibulum urna. Donec vitae nunc felis</p>
+            </div>
+        </article>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>© 2025 Adelina Burkovska</p>
+  </footer>
+
+<script>
+  const burger = document.querySelector('.burger');
+  const navList = document.querySelector('.nav-list');
+  burger.addEventListener('click', () => {
+    navList.classList.toggle('nav-active');
+  });
+</script>
+</body>
+</html>

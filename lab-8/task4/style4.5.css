@@ -1,0 +1,273 @@
+* { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+}
+body { 
+  font-family: Candara Light; 
+  line-height: 1.5; 
+}
+.container {
+  width: min(1200px, 100%);
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  z-index: 1;
+  padding: 20px 50px;
+  width: 100%;
+  height: 90px;
+  top: 0;
+}
+.header-menu {
+  position: sticky;
+  border-bottom: 1px solid #ccc;
+}
+.logo {
+  font-size: 34px;
+  font-family:Brush Script MT;
+  cursor: pointer;
+  background: linear-gradient(45deg, #d4247c, #ff52a9, #e79fc3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.nav-list { 
+  display: flex; 
+  gap: 20px; 
+  list-style: none; 
+}
+.nav-list li a {
+  text-decoration: none;
+  font-family: Cascadia Code Light; 
+  color: #000;
+  font-size: 18px;
+  padding: 5px 10px;
+}
+.nav-list li a:hover,
+.nav-list li a:focus { 
+  background: #fbcfe5; 
+  color: #ff52a9; 
+  border-radius: 5px; 
+}
+
+.nav-list li a:active {
+  color: #fce6f1; 
+  border: 3px solid #fce6f1;          
+  border-radius: 10px;
+}
+
+
+.burger {
+  display: none;
+  cursor: pointer;
+  width: 30px; height: 20px;
+  position: relative;
+}
+.burger span, .burger span::before, .burger span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background: #000;
+  transition: 0.3s;
+}
+.burger span::before { 
+  content: ''; 
+  top: -8px; 
+}
+.burger span::after { 
+  content: ''; 
+  top: 8px; 
+}
+
+
+.intro { 
+  padding: 80px 50px; 
+  background: #fce6f1; 
+  text-align: center; 
+  cursor: pointer;
+}
+.intro h1 { 
+  margin-bottom: 10px; 
+  font-size: 32px; 
+  font-family: Californian FB;      
+}
+.intro p { 
+  font-size: 20px;
+  font-family: Candara Light;
+  color: #666; 
+  text-transform: lowercase;
+}
+
+
+.works-grid { 
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 50px; 
+  justify-content: center; 
+}
+.work-card { 
+  flex: 1 1 30%;  
+  overflow: hidden; 
+}
+.work-card img { 
+  height: 350px; 
+  width: 100%;  
+}
+.work-card:hover img { 
+  transform: scale(1.05); 
+}
+
+.btn {
+ background-color: #fbcfe5;
+ color: white;
+ border: none;
+ padding: 15px 24px;
+ font-size: 18px;
+ border-radius: 50px;
+ cursor: pointer; 
+}
+.btn:hover,
+.btn:focus {
+  border: 2px solid #ff52a9;            
+  color: #ff52a9; 
+}
+.btn:active {
+  color: #fce6f1; 
+  border: 3px solid #fce6f1;       
+}
+
+.contact {
+ text-align: center;
+ padding: 80px;
+ height: 80px;
+}
+.contact h2 {
+  margin-bottom: 15px;
+}
+
+
+.services-grid { 
+  display: flex; 
+  gap: 30px; 
+  flex-wrap: wrap;
+  justify-content: center; 
+}
+.service-card {
+  flex: 1 1 22%;
+  max-width: 400px;
+  padding: 30px;
+  background: #fce6f1;
+  text-align: center;
+  border-radius: 15px;
+}
+.service-card h3 {
+  font-family: Californian FB;      
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: rgb(228, 105, 175);
+}
+.service-card p {
+  color: rgb(0, 0, 0);
+}
+.service-card:hover, .service-card:focus { 
+  transform: translateY(-5px); 
+  box-shadow: 0 0 25px rgb(228, 105, 175); 
+  transition: 0.3s;
+}
+.service-card:active {
+  background-color: #ffffff; 
+}
+
+
+.journal-grid { 
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px 200px;
+  margin-bottom: 50px; 
+}
+.journal-item { 
+  display: flex;
+  gap: 26px;
+  align-items: flex-start;
+  padding-bottom: 18px;
+}
+.journal-meta {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.4rem;
+  color: #4d5a5d;
+}
+.journal-title {
+  font-family: Californian FB;      
+  margin: 0 0 0.5rem;
+  color: rgb(228, 105, 175);
+
+}
+.journal-text {
+  font-size: 16px;
+  font-family: Candara Light;
+}
+.journal-section {
+  padding-bottom: 0;
+}
+.journal img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  flex: 0 0 120px;
+  border-radius: 2px;
+}
+
+.footer { 
+  text-align: center; 
+  padding: 20px; 
+  background: #222; 
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .works-grid, .services-grid { 
+    flex-direction: row; 
+    justify-content: space-around; 
+  }
+  .work-card, .service-card { 
+    flex: 1 1 45%; 
+  }
+  .journal-grid { 
+    flex-direction: column; 
+  }
+  .burger { 
+    display: block; 
+  }
+  .nav-list { 
+    display: none; 
+    flex-direction: column; 
+    gap: 10px; background: #fff; 
+    position: absolute; 
+    top: 60px; 
+    right: 50px;
+    padding: 20px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+  }
+  .nav-list.nav-active { 
+    display: flex; 
+  }
+}
+
+@media (max-width: 576px) {
+  .works-grid, .services-grid { 
+    flex-direction: column; 
+    align-items: center; 
+  }
+  .work-card, .service-card { 
+    flex: 1 1 90%; 
+    max-width: 90%; 
+  }
+}

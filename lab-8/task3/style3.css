@@ -1,0 +1,140 @@
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif; 
+    background-color: #f7f7f7;
+    padding: 30px;
+}
+
+.weather-widget {
+    max-width: 300px; 
+    margin: 0 auto;
+    background-color: #ffffff;
+    border: 1px solid #ddd; 
+    padding: 15px 20px;
+}
+
+.widget-header {
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+
+.city-name {
+    font-size: 24px;
+    font-weight: 500; 
+    margin: 0;
+}
+
+.current-date {
+    font-size: 13px;
+    color: #888;
+    margin: 5px 0 0 0;
+}
+
+.current-forecast {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; 
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.main-info {
+    display: flex;
+    align-items: flex-start; 
+    padding-top: 5px; 
+}
+
+.weather-icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.temperature {
+    display: flex;
+    align-items: flex-start;
+}
+
+.temp-value {
+    font-size: 48px;
+    font-weight: 300;
+    line-height: 1; 
+}
+
+.temp-unit {
+    font-size: 18px; 
+    font-weight: 300;
+    margin-left: 2px;
+    line-height: 1.5;
+}
+
+.details-list {
+    font-size: 12px;
+    line-height: 1.6;
+    text-align: right;
+    color: #444;
+}
+
+.details-list p {
+    margin: 0;
+    white-space: nowrap; 
+}
+
+.details-list p strong {
+    font-weight: normal; 
+}
+
+.daily-forecast-list {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+}
+
+.forecast-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee; 
+    font-size: 14px;
+}
+
+.day-name {
+    flex-basis: 35%; 
+    font-weight: normal;
+    color: #333;
+}
+
+.day-icon {
+    width: 25px; 
+    height: 25px;
+    margin-right: 25px; 
+    flex-shrink: 0;
+}
+
+.day-temp {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    text-align: right;
+    margin-right: 20px; 
+}
+
+.high-temp {
+    font-weight: normal; 
+    font-size: 15px;
+    line-height: 1.2;
+}
+
+.low-temp {
+    color: #888;
+    font-size: 13px;
+    line-height: 1.2;
+}
+
+.pollen {
+    flex-basis: auto; 
+    color: #666;
+    text-align: right;
+    flex-shrink: 0;
+}
