@@ -1,0 +1,86 @@
+* {
+  box-sizing:border-box;
+}
+:root{
+  --gap: 1rem;
+  --pad: 0.75rem;
+  --bg: #fff8f8;
+  --card: #fff;
+  --accent: #e8624f;
+  --text: #3b2f2f;
+  --max-width: 1200px;
+}
+
+html,body {
+  height:100%; 
+  background:var(--bg); 
+  font-family: system-ui, 
+  -apple-system, "Segoe UI", Roboto, Arial; 
+  color:var(--text);
+}
+
+.wrap{
+  max-width: var(--max-width);
+  margin: 2rem auto;
+  padding: 1rem;
+  display: grid;
+  gap: var(--gap);
+
+  /*MOBILE*/
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "header"
+    "nav"
+    "main"
+    "sidebar"
+    "ads"
+    "footer";
+}
+
+.header,.nav,.sidebar,.main,.ads,.footer{
+  background: var(--card);
+  border: 2px solid var(--accent);
+  padding: var(--pad);
+  border-radius: 6px;
+}
+
+.header{ grid-area: header; }
+.nav{ grid-area: nav; }
+.main{ grid-area: main; min-height:200px;}
+.sidebar{ grid-area: sidebar; }
+.ads{ grid-area: ads; }
+.footer{ grid-area: footer; }
+
+/*TABLET*/
+@media (min-width: 720px){
+  .wrap{
+    grid-template-columns: 220px 1fr;
+    grid-template-areas:
+      "header header"
+      "nav nav"
+      "sidebar main"
+      "ads footer";
+  }
+
+  .sidebar { min-height: 260px; }
+  .main{ min-height: 260px; }
+}
+
+/*DESKTOP*/
+@media (min-width: 1100px){
+  .wrap{
+    grid-template-columns: 200px 1fr 180px;
+    grid-template-areas:
+      "header header header"
+      "sidebar nav ads"
+      "sidebar main ads"
+      "footer footer footer";
+    align-items: start;
+  }
+
+  .sidebar{ min-height: 424px; }
+  .main{ min-height: 360px; }
+  .ads{ min-height: 424px; }
+}
+
+.header, .footer{ font-weight:600; }
