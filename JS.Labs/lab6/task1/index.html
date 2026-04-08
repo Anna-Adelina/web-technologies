@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Магазин "Техно-Світ"</h1>
+    <div id="total-cost">Загальна вартість: 0 ₴</div>
+</header>
+
+<main>
+    <section class="controls">
+        <div class="filter-group">
+            <span>Фільтр:</span>
+            <button onclick="applyFilter('Електроніка')">Електроніка</button>
+            <button onclick="applyFilter('Одяг')">Одяг</button>
+            <button onclick="applyFilter('Дім')">Дім</button>
+            <button onclick="resetFilters()">Скинути</button>
+        </div>
+        <div class="sort-group">
+            <span>Сортування:</span>
+            <button onclick="applySort('price')">За ціною</button>
+            <button onclick="applySort('created')">За датою додавання</button>
+            <button onclick="applySort('updated')">За датою оновлення</button>
+            <button onclick="resetSort()">Скинути</button>
+        </div>
+    </section>
+
+    <ul id="product-list" class="product-grid"></ul>
+    
+    <div class="add-btn-container">
+        <button id="open-modal-btn">Додати новий товар</button>
+    </div>
+</main>
+
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <h2 id="modal-title">Товар</h2>
+        <form id="product-form">
+            <input type="hidden" id="edit-id">
+            <input type="text" id="p-name" placeholder="Назва товару" required>
+            <input type="number" id="p-price" placeholder="Ціна" required min="1">
+            <select id="p-category" required>
+                <option value="Електроніка">Електроніка</option>
+                <option value="Одяг">Одяг</option>
+                <option value="Дім">Дім</option>
+            </select>
+            <input type="url" id="p-img" placeholder="URL зображення" required>
+            <div class="modal-actions">
+                <button type="submit" id="save-btn">Зберегти</button>
+                <button type="button" id="close-modal-btn">Скасувати</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="snackbar"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
