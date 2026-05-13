@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Memory Pair Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========== SETUP PANEL ========== -->
+  <div class="setup-panel" id="setup-panel">
+    <div class="setup-header">
+      <h1 class="logo">Memory Pair Game</h1>
+    </div>
+
+    <!-- Players -->
+    <div class="setup-section">
+      <h3 class="section-title">Гравці</h3>
+      <div class="player-mode-row">
+        <button class="mode-btn active" id="btn-1p" onclick="selectPlayers(1)">
+          1 Гравець
+        </button>
+        <button class="mode-btn" id="btn-2p" onclick="selectPlayers(2)">
+          2 Гравці
+        </button>
+      </div>
+      <div class="player-inputs">
+        <div class="player-input-row">
+          <span class="player-dot p1"></span>
+          <input type="text" id="p1-name" value="Гравець 1" placeholder="Ім'я гравця 1" />
+        </div>
+        <div class="player-input-row hidden" id="p2-row">
+          <span class="player-dot p2"></span>
+          <input type="text" id="p2-name" value="Гравець 2" placeholder="Ім'я гравця 2" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Grid size -->
+    <div class="setup-section">
+      <h3 class="section-title">Розмір поля</h3>
+      <div class="grid-inputs">
+        <label>Рядки:
+          <input type="number" id="grid-rows" value="3" min="3" max="5" />
+        </label>
+        <label>Стовпці:
+          <input type="number" id="grid-cols" value="4" min="4" max="6" />
+        </label>
+      </div>
+      <p class="grid-note" id="grid-note">12 карток · 6 пар</p>
+    </div>
+
+    <!-- Difficulty -->
+    <div class="setup-section">
+      <h3 class="section-title">Складність</h3>
+      <div class="diff-row">
+        <button class="diff-btn easy active" id="diff-easy" onclick="selectDiff('easy')">
+          Easy<br><small>3 хв</small>
+        </button>
+        <button class="diff-btn normal" id="diff-normal" onclick="selectDiff('normal')">
+          Normal<br><small>2 хв</small>
+        </button>
+        <button class="diff-btn hard" id="diff-hard" onclick="selectDiff('hard')">
+          Hard<br><small>1 хв</small>
+        </button>
+      </div>
+    </div>
+
+    <!-- Rounds -->
+    <div class="setup-section" id="rounds-section">
+      <h3 class="section-title">Кількість раундів</h3>
+      <div class="rounds-row">
+        <input type="number" id="rounds-count" value="1" min="1" max="10" />
+        <span class="rounds-hint">раунд(ів)</span>
+      </div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="setup-actions">
+      <button class="btn btn-secondary" onclick="resetSettings()">↺ Скинути</button>
+      <button class="btn btn-primary" onclick="startGame()">▶ Розпочати гру</button>
+    </div>
+  </div>
+
+  <!-- ========== GAME AREA ========== -->
+  <div class="game-area hidden" id="game-area">
+
+    <!-- Top bar -->
+    <div class="game-topbar">
+      <div class="topbar-left">
+        <span class="logo-small">Memory</span>
+        <span class="round-label" id="round-label">Раунд 1/1</span>
+      </div>
+      <div class="topbar-stats">
+        <div class="stat-chip">
+          <span id="timer-display">3:00</span>
+        </div>
+        <div class="stat-chip">
+          <span id="moves-display">0</span> ходів
+        </div>
+        <div class="stat-chip">
+          <span id="pairs-display">0/6</span> пар
+        </div>
+      </div>
+      <div class="topbar-actions">
+        <button class="btn btn-small" onclick="restartRound()">↺ Рестарт</button>
+        <button class="btn btn-small" onclick="goToSetup()">⚙</button>
+      </div>
+    </div>
+
+    <!-- Timer bar -->
+    <div class="timer-track">
+      <div class="timer-fill" id="timer-fill"></div>
+    </div>
+
+    <!-- Player HUD (2 players) -->
+    <div class="player-hud hidden" id="player-hud">
+      <div class="player-card active" id="phud-0">
+        <span class="phud-dot p1"></span>
+        <div>
+          <div class="phud-name" id="phud-name-0">Гравець 1</div>
+          <div class="phud-score"><span id="phud-score-0">0</span> пар · <span id="phud-moves-0">0</span> ходів</div>
+        </div>
+        <span class="turn-arrow">◀ Хід</span>
+      </div>
+      <div class="player-card" id="phud-1">
+        <span class="phud-dot p2"></span>
+        <div>
+          <div class="phud-name" id="phud-name-1">Гравець 2</div>
+          <div class="phud-score"><span id="phud-score-1">0</span> пар · <span id="phud-moves-1">0</span> ходів</div>
+        </div>
+        <span class="turn-arrow hidden">◀ Хід</span>
+      </div>
+    </div>
+
+    <!-- Board -->
+    <div class="board" id="board"></div>
+  </div>
+
+  <!-- ========== MODAL ========== -->
+  <div class="modal-overlay hidden" id="modal-overlay">
+    <div class="modal" id="modal">
+      <!-- filled by JS -->
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

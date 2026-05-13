@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Memory Pair Game</h1>
+
+<div class="controls">
+    <label>Рядки:
+        <input type="number" id="rows" value="4" min="4">
+    </label>
+    <label>Стовпці:
+        <input type="number" id="cols" value="4" min="4">
+    </label>
+
+    <label>Складність:
+        <select id="difficulty">
+            <option value="180">Easy (3 хв)</option>
+            <option value="120">Normal (2 хв)</option>
+            <option value="60">Hard (1 хв)</option>
+        </select>
+    </label>
+
+    <button id="start">Почати гру</button>
+    <h3>Гравці</h3>
+
+    <label>
+        <input type="radio" name="mode" value="1" checked> 1 гравець
+    </label>
+    <label>
+        <input type="radio" name="mode" value="2"> 2 гравці
+    </label>
+
+    <div>
+        <input type="text" id="p1" placeholder="Player 1" value="Player 1">
+        <input type="text" id="p2" placeholder="Player 2" value="Player 2"  style="display: none;">
+    </div>
+
+    <label>Раунди:
+        <input type="number" id="rounds" value="1" min="1">
+    </label>
+
+    <h3 id="currentPlayer"></h3>
+    <button id="reset">Скинути налаштування</button>
+</div>
+
+<div class="info">
+    <p>Час: <span id="timer">0</span></p>
+
+    <p>Ходи Player 1: <span id="movesP1">0</span></p>
+    <p>Ходи Player 2: <span id="movesP2">0</span></p>
+</div>
+
+<div class="game-board" id="gameBoard"></div>
+
+<button id="restart">Рестарт</button>
+
+<script src="script.js"></script>
+</body>
+</html>

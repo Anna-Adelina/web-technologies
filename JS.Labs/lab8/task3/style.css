@@ -1,0 +1,47 @@
+body {
+  font-family: Arial;
+  background: #f0f0f0;
+  text-align: center;
+}
+
+.board {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+}
+
+.column {
+  width: 30%;
+  background: #ddd;
+  padding: 10px;
+  border-radius: 10px;
+  min-height: 300px;
+  transition: background 0.3s ease;
+}
+
+.column:hover {
+  background: #ccc;
+}
+
+h2 {
+  text-align: center;
+}
+
+.task {
+  background: white;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: grab;
+  transition: transform 0.3s;
+}
+
+/* CSS3 transition */
+.task:hover {
+  transform: scale(1.05);
+}
+
+/* Flipping animation */
+.task.flip {
+  transform: rotateY(180deg);
+}

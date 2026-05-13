@@ -1,0 +1,374 @@
+body {
+  background: #000;
+  font-family: "PressStart2P";
+}
+
+/* ─── Game menu ─────────────────────────────────────────── */
+.game-menu {
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  width: 800px; height: 480px;
+  background: url(./img/main-background.png) no-repeat;
+}
+
+.game-menu__title {
+  position: fixed;
+  top: 15%; left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  font-size: 70px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* ─── Buttons ────────────────────────────────────────────── */
+.button {
+  position: fixed;
+  left: 50%; top: 70%;
+  transform: translate3d(-50%, -50%, 0);
+  padding: 0; border: 40%; outline: 0;
+  border-color: #e20f0f;
+  font-family: "PressStart2P";
+  font-size: 30px;
+  text-transform: uppercase;
+  background: #ffffff;
+  color: #e20f0f;
+  cursor: pointer;
+}
+.button-restart  { display: none; top: 90%; z-index: 1001; }
+.button-next-level { display: none; top: 90%; z-index: 1001; }
+.button:hover, .button:active { color: #000; }
+
+/* ─── Game wrapper & screen ───────────────────────────────── */
+.wrapper {
+  display: none;
+  position: fixed;
+  left: 50%; top: 55%;
+  transform: translate3d(-50%, -50%, 0);
+  height: 750px; width: 900px;
+  box-sizing: border-box;
+}
+
+.game-screen {
+  display: none;
+  position: fixed;
+  left: 50%; top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  box-sizing: border-box;
+  width: 800px; height: 480px;
+  overflow: hidden;
+  background: url(./img/bg.png) no-repeat;
+  background-size: cover;
+}
+
+/* ─── Death screen flash ─────────────────────────────────── */
+.game-screen--death { animation: 4s player-death linear; }
+@keyframes player-death {
+  0%   { box-shadow: inset 0 0 500px rgba(215,35,0,0.9); }
+  50%  { box-shadow: inset 0 0 300px rgba(215,35,0,0.6); }
+  100% { box-shadow: inset 0 0 100px rgba(215,35,0,0.2); }
+}
+
+/* ─── Messages ───────────────────────────────────────────── */
+.message {
+  color: #fff;
+  position: absolute;
+  left: 57%; top: 36%;
+  transform: translate3d(-50%, -50%, 0);
+  z-index: 1;
+}
+.message--fire {
+  width: 116px; height: 68px;
+  background: url(./img/fire-right.png) no-repeat;
+  left: 60%;
+}
+.message--dead, .message--win {
+  left: 50%; top: 30%;
+  font-family: "PressStart2P";
+  font-size: 30px;
+  color: #fff;
+}
+
+/* ─── HUD panels ─────────────────────────────────────────── */
+.white-line {
+  position: absolute;
+  left: 50px; top: 10%;
+  z-index: 700;
+  width: 800px;
+  border-bottom: 2px solid #fff;
+}
+.game-panels { display: none; }
+
+.players-panel, .time-panel, .score-panel {
+  padding: 10px;
+  font-family: "PressStart2P";
+  font-size: 25px;
+  text-transform: uppercase;
+  text-align: center;
+  color: #80d010;
+}
+.time-panel { position: absolute; left: 70%; top: 7px; z-index: 700; }
+.time-panel__gunman, .time-panel__you { font-family: "Digital-7"; font-size: 56px; }
+.time-panel__you { margin-bottom: 5px; }
+.players-panel {
+  position: absolute; left: 50%; top: 10%;
+  box-sizing: border-box;
+  transform: translate3d(-50%, -50%, 0);
+  z-index: 700;
+}
+.players-panel__you, .players-panel__gunman {
+  padding: 10px;
+  border: 2px solid #80d010;
+  border-radius: 10px;
+}
+.players-panel__you { margin-bottom: 10px; }
+.score-panel { text-align: center; }
+.score-panel__score {
+  position: absolute; left: 27%; top: 85%;
+  transform: translate3d(-50%, -50%, 0);
+  z-index: 700; box-sizing: border-box;
+}
+.score-panel__level {
+  position: absolute; left: 72%; top: 85%;
+  z-index: 700;
+  transform: translate3d(-50%, -50%, 0);
+  box-sizing: border-box;
+}
+
+/* ─── Win screen ─────────────────────────────────────────── */
+.win-screen {
+  display: none;
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  box-sizing: border-box;
+  width: 800px; height: 480px;
+  background: url(./img/main-background.png) no-repeat;
+}
+.win-screen__title {
+  position: fixed;
+  top: 35%; left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  font-size: 50px; line-height: 70px;
+  text-transform: uppercase; text-align: center;
+}
+.win-screen__score {
+  position: fixed;
+  top: 55%;
+  left: 34%;
+  text-transform: uppercase;
+  font-family: "PressStart2P";
+  font-size: 25px;
+  text-align: center;
+  color: #d01010;
+  background-color: #fff;
+}
+
+.win-screen__score-num {
+  color: #000000;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   GUNMAN SPRITE SHEET  468×365 px  (1x — pixel art)
+   Characters (rows):
+     Cowboy   y=1   h=63   — 3 walk | stand | dizzy | ready | shoot | death
+     WhiteVest y=90  h=50   — same layout
+     Blackhat  y=144 h=80   — same layout
+     Mexican   y=229 h=63   — same layout
+     BlueHat   y=297 h=68   — same layout
+   ═══════════════════════════════════════════════════════════ */
+
+.gunman {
+  position: absolute;
+  bottom: 85px;
+  z-index: 900;
+  background-image: url(./img/gunman.png);
+  background-repeat: no-repeat;
+  image-rendering: pixelated;
+  /* NO background-size — use sprite at native 1x */
+}
+
+/* ──────────────────────────────────────────────────────────
+   LEVEL 1 · COWBOY  (y=1, h=63, walk frames x=0,34,67)
+   ────────────────────────────────────────────────────────── */
+.gunman-level-1 {
+  width: 32px; height: 63px;
+  background-position: 0px -1px;
+  animation: walk-cowboy 0.4s steps(1) infinite;
+  transform: scale(3);
+  transform-origin: bottom left;
+}
+@keyframes walk-cowboy {
+  0%   { background-position:  0px -1px; }
+  33%  { background-position: -34px -1px; }
+  66%  { background-position: -67px -1px; }
+}
+
+.gunman-level-1__standing {
+  animation: none;
+  background-position: -100px -1px;   /* frame3: face-forward */
+}
+.gunman-level-1__ready {
+  animation: none;
+  background-position: -202px -1px;   /* frame6: gun drawn */
+}
+.gunman-level-1__shooting {
+  animation: none;
+  background-position: -236px -1px;   /* frame7: shooting */
+}
+.gunman-level-1__death {
+  animation: death-fall-cowboy 0.6s steps(1) forwards;
+}
+
+@keyframes death-fall-cowboy {
+  0%   { background-position: -434px -1px; }  /* стоїть підстрелений */
+  33%  { background-position: -338px -1px; }  /* падає */
+  66%  { background-position: -372px -1px; }  /* майже ліг */
+  100% { background-position: -404px -1px; }  /* лежить */
+}
+
+.gunman-level-2 {
+  width: 30px; height: 72px;  
+  background-position: 0px -68px; 
+  animation: walk-whitevest 0.4s steps(1) infinite;
+  transform: scale(3);
+  transform-origin: bottom left;
+}
+
+@keyframes walk-whitevest {
+  0%   { background-position:   0px -68px; }
+  33%  { background-position: -34px -68px; }
+  66%  { background-position: -68px -68px; }
+}
+
+.gunman-level-2__standing {
+  animation: none;
+  background-position: -209px -68px;
+}
+.gunman-level-2__ready {
+  animation: none;
+  background-position: -102px -68px;
+}
+.gunman-level-2__shooting {
+  animation: none;
+  background-position: -182px -68px;
+  width: 25px;
+}
+.gunman-level-2__death {
+  animation: death-blink 0.15s steps(1) 4;
+  background-position: -239px -68px;
+} 
+
+/* ──────────────────────────────────────────────────────────
+   LEVEL 3 · BLACK HAT  (y=144, h=80, walk frames x=0,28,56)
+   ────────────────────────────────────────────────────────── */
+.gunman-level-3 {
+  width: 28px; height: 80px;
+  background-position: 0px -144px;
+  animation: walk-blackhat 0.4s steps(1) infinite;
+  transform: scale(3);
+  transform-origin: bottom left;
+}
+@keyframes walk-blackhat {
+  0%   { background-position:   0px -144px; }
+  33%  { background-position: -28px -144px; }
+  66%  { background-position: -56px -144px; }
+}
+
+.gunman-level-3__standing {
+  animation: none;
+  background-position: -175px -144px;
+}
+.gunman-level-3__ready {
+  animation: none;
+  background-position: -84px -144px;
+}
+.gunman-level-3__shooting {
+  animation: none;
+  background-position: -144px -144px;
+}
+.gunman-level-3__death {
+  animation: death-blink 0.15s steps(1) 4;
+  background-position: -205px -144px;
+  width: 32px;
+}
+
+/* ──────────────────────────────────────────────────────────
+   LEVEL 4 · MEXICAN  (y=229, h=63, walk frames x=0,34,68)
+   ────────────────────────────────────────────────────────── */
+.gunman-level-4 {
+  width: 32px; height: 63px;
+  background-position: 0px -229px;
+  animation: walk-mexican 0.4s steps(1) infinite;
+  transform: scale(3);
+  transform-origin: bottom left;
+}
+@keyframes walk-mexican {
+  0%   { background-position:   0px -229px; }
+  33%  { background-position: -34px -229px; }
+  66%  { background-position: -68px -229px; }
+}
+
+.gunman-level-4__standing {
+  animation: none;
+  background-position: -201px -229px;
+}
+.gunman-level-4__ready {
+  animation: none;
+  background-position: -102px -229px;
+}
+.gunman-level-4__shooting {
+  animation: none;
+  background-position: -168px -229px;
+}
+.gunman-level-4__death {
+  animation: death-blink 0.15s steps(1) 4;
+  background-position: -234px -229px;
+}
+
+/* ──────────────────────────────────────────────────────────
+   LEVEL 5 · BLUE HAT  (y=297, h=68, walk frames x=0,34,68)
+   ────────────────────────────────────────────────────────── */
+.gunman-level-5 {
+  width: 31px; height: 68px;
+  background-position: 0px -297px;
+  animation: walk-bluehat 0.4s steps(1) infinite;
+  transform: scale(3);
+  transform-origin: bottom left;
+}
+@keyframes walk-bluehat {
+  0%   { background-position:   0px -297px; }
+  33%  { background-position: -34px -297px; }
+  66%  { background-position: -68px -297px; }
+}
+
+.gunman-level-5__standing {
+  animation: none;
+  background-position: -195px -297px;
+}
+.gunman-level-5__ready {
+  animation: none;
+  background-position: -102px -297px;
+}
+.gunman-level-5__shooting {
+  animation: none;
+  background-position: -164px -297px;
+}
+.gunman-level-5__death {
+  animation: death-fall-bluehat 0.6s steps(1) forwards;
+}
+
+@keyframes death-fall-bluehat {
+  0%  { background-position: -224px -297px; width: 37px;}  
+  50%  { background-position: -258px -297px; width: 36px; }  
+  100%  { background-position: -292px -297px; width: 23px; } 
+}
+
+/* ─── Shared death blink ─────────────────────────────────── */
+
+@keyframes death-blink {
+  0%   { opacity: 1; }
+  50%  { opacity: 0.3; }
+  100% { opacity: 1; }
+}
